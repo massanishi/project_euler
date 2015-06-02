@@ -1,7 +1,3 @@
-function maxPalidomic(){
-	
-	
-}
 
 function findPalindromicNumOfThreeDigits () {
 	var palidomicList = [];

@@ -2,15 +2,15 @@ console.time("primecount");
 var primeContainer = [];
 function findNthPrime (n){
 
-	var i = 2;
+	var primeCandidate = 2;
 	while(primeContainer.length<n){
-		if(checkForPrime(i)) primeContainer.push(i);
-		i++;
+		if(checkForPrime(primeCandidate)) primeContainer.push(primeCandidate);
+		primeCandidate++;
 	}
 	return primeContainer[primeContainer.length-1];
 }
 
-// Old one just for record. It was taking 9sec
+// Old one just for record. It took 9sec
 // function checkForPrime (num) {
 // 	for (var i = 2; i <= num; i++) {
 
@@ -22,6 +22,7 @@ function findNthPrime (n){
 // }
 
 function checkForPrime (num) {
+	// Divide prime candidate numebr by already discovered primes.
 	for (var i = 0; primeContainer[i] <= Math.sqrt(num); i++) {
 		
 		if((num/primeContainer[i])%1 === 0){
